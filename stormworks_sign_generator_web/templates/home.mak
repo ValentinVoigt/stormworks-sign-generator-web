@@ -34,4 +34,7 @@
 	Images are not logged, anonymized IP is logged for statistics.
 	<br>
 	No cookies, trackers, ads or JavaScript.
+	<br>
+	In case you're feeling generous, feel free to
+	<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=E3HSHDLRT4N5W&source=url">donate</a>. ¯\_(ツ)_/¯
 </p>

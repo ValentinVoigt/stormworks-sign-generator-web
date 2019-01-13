@@ -15,7 +15,7 @@
 
 	<h2 class="my-3">2. Chose background color</h2>
 	<p>
-		For files with transparency or with size not dividable by 9, a background color is needed.
+		For files with transparency or with size not divisible by 9, a background color is needed.
 		For every other file, this field can be left default (white).
 	</p>
 	<div class="form-group">

@@ -4,8 +4,6 @@ services:
     container_name: web
     restart: always
     build: .
-    ports:
-    - "0.0.0.0:6543:6543"
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /usr/bin/docker:/usr/bin/docker

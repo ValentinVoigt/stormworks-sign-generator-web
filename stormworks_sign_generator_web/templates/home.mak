@@ -31,7 +31,7 @@
 	<a href="https://github.com/ValentinVoigt/stormworks-sign-generator">Generator</a>,
 	<a href="https://github.com/ValentinVoigt/stormworks-sign-generator-web">Website</a>
 	<br>
-	Images are not logged, anonymized IP is logged for statistics.
+	Images are not logged, anonymized requests are logged for statistics.
 	<br>
 	No cookies, trackers, ads or JavaScript.
 	<br>

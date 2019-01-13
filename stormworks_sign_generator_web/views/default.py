@@ -1,5 +1,8 @@
 import re
+import subprocess
+import os.path
 
+from pyramid.response import Response
 from pyramid.view import view_config
 
 @view_config(
@@ -28,4 +31,42 @@ def home(request):
 			if int(height) < 0 or int(height) > 1000:
 				return {'error': "Height must be between 1 and 1000."}
 	
+		cmd = "docker run -i generate python generate_sign.py"
+		if width:
+			cmd += " --width %i" % int(width)
+		if height:
+			cmd += " --height %i" % int(height)
+		cmd += " --background %s" % background
+		cmd += " - -" # stdin and stdout
+
+		try:
+			image.file.seek(0)
+			p = subprocess.run(
+				cmd,
+				shell=True,
+				input=image.file.read(),
+				stdout=subprocess.PIPE,
+				stderr=subprocess.PIPE,
+				timeout=3,
+				check=True
+			)
+		except subprocess.CalledProcessError as p:
+			error = str(p.stderr, "utf-8").strip().split("\n")[-1]
+			return {"error": "Generation failed: " + error}
+		except subprocess.TimeoutExpired:
+			return {"error": "Generation timeout. Your file is probably too large."}
+
+		if not p.stdout.startswith(b'<?xml version="1.0" encoding="UTF-8"?>'):
+			return {"error": "File generation failed with unknown error. :( " + str(p.stdout, "utf-8")}
+
+		filename = os.path.splitext(image.filename)[0] + ".xml"
+
+		return Response(
+			body=p.stdout,
+			headers={
+				'Content-Type': 'application/download',
+				'Content-Disposition': 'attachment; filename=%s' % filename,
+			}
+		)
+
 	return {}

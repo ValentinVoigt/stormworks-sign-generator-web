@@ -6,5 +6,5 @@
 </p>
 
 <div class="text-center">
-	<img class="img-fluid" src="${request.static_url('stormworks_sign_generator_web:static/example.png')}" alt="Example Paintable Sign">
+	<img class="img-fluid" src="${request.static_path('stormworks_sign_generator_web:static/example.png')}" alt="Example Paintable Sign">
 </div>

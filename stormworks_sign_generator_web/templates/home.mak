@@ -2,7 +2,7 @@
 
 <div class="text-center">
 	<a href="${request.route_path('home')}">
-		<img src="${request.static_url('stormworks_sign_generator_web:static/stormworks_logo_small.png')}" alt="Stormworks: Build and Rescue Logo" width="288">
+		<img src="${request.static_path('stormworks_sign_generator_web:static/stormworks_logo_small.png')}" alt="Stormworks: Build and Rescue Logo" width="288">
 	</a>
 
 	<h1 class="display-3 mb-3">Stormworks Sign Generator</h1>

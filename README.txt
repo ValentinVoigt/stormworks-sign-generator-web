@@ -20,10 +20,6 @@ Getting Started
 
     env/bin/pip install -e ".[testing]"
 
-- Run your project's tests.
-
-    env/bin/pytest
-
 - Run your project.
 
     env/bin/pserve development.ini

@@ -9,9 +9,8 @@
 	<p>
 		All popular image formats are supported. No animations, no PDF, no compressed files.
 	</p>
-	<div class="custom-file">
-		<input type="file" class="custom-file-input" id="image" name="image">
-		<label class="custom-file-label" for="image">Choose file</label>
+	<div class="form-group">
+		<input type="file" class="form-contrl-file" id="image" name="image">
 	</div>
 
 	<h2 class="my-3">2. Chose background color</h2>
@@ -31,7 +30,7 @@
 	
 	<h2 class="my-3">3. Set size</h2>
 	<p>
-		Select the size of your sign here. That is number of "Paintable Sign" blocks per axis. You can leave both fields empty to use native image size. Remember that each sign has 9 by 9 pixels. You can also just enter one value to automatically calculate the other dimension with respect to aspect-ratio.
+		Select the size of your sign here. Size means number of "Paintable Sign" blocks per axis. You can leave both fields empty to use native image size. Remember that each sign has 9 by 9 pixels. You can also just enter one value to automatically calculate the other dimension with respect to aspect-ratio.
 	</p>
 	<div class="row">
 		<div class="col-sm-6">
@@ -60,4 +59,7 @@
 		</div>
 	</div>
 	<button type="submit" class="btn btn-lg btn-block btn-primary">Upload &amp; generate!</button>
+	<p class="mt-3">
+		Copy the file to <code>%APPDATA%\Stormworks\data\vehicles</code> &mdash; you can copy and paste this path to Windows Explorer's address bar!
+	</p>
 </form>

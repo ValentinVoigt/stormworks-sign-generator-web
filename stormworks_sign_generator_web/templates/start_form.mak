@@ -24,7 +24,7 @@
 			type="background"
 			class="form-control"
 			id="exampleInputEmail1"
-			value="0xFFFFFF"
+			value="${'0xFFFFFF' if request.method!='POST' else request.POST.get('background', '')}"
 			name="background"
 			placeholder="24-bit RGB Hex color (e.g. 0xAABBCC)">
 	</div>
@@ -42,6 +42,7 @@
 					class="form-control"
 					id="width"
 					name="width"
+					value="${'' if request.method!='POST' else request.POST.get('width', '')}"
 					placeholder="e.g. 6 blocks or empty">
 			</div>
 		</div>
@@ -53,6 +54,7 @@
 					class="form-control"
 					id="height"
 					name="height"
+					value="${'' if request.method!='POST' else request.POST.get('height', '')}"
 					placeholder="e.g. 7 blocks or empty">
 			</div>
 		</div>

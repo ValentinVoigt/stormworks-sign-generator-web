@@ -20,10 +20,10 @@
 	</p>
 	<div class="form-group">
 		<input
-			type="background"
+			type="color"
 			class="form-control"
 			id="exampleInputEmail1"
-			value="${'0xFFFFFF' if request.method!='POST' else request.POST.get('background', '')}"
+			value="${'#FFFFFF' if request.method!='POST' else request.POST.get('background', '')}"
 			name="background"
 			placeholder="24-bit RGB Hex color (e.g. 0xAABBCC)">
 	</div>

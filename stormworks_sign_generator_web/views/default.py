@@ -18,8 +18,9 @@ def home(request):
 
 		if not hasattr(image, 'file'):
 			return {'error': "Please select a file."}
-		if not background or not re.match(r"0[xX][0-9a-fA-F]{6}", background):
-			return {'error': "Please enter a background color. Use 0xFFFFFF if unsure."}
+		if not background or not re.match(r"#[0-9a-fA-F]{6}", background):
+			return {'error': "Please enter a background color. Use #FFFFFF/ white if unsure."}
+		background = background.replace("#", "0x")
 		if width:
 			if not width.isdigit():
 				return {'error': "Please enter a valid number as width."}

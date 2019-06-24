@@ -32,7 +32,7 @@ def home(request):
 			if int(height) < 0 or int(height) > 1000:
 				return {'error': "Height must be between 1 and 1000."}
 	
-		cmd = "docker run -i generate python generate_sign.py"
+		cmd = "docker run -i --rm generate python generate_sign.py"
 		if width:
 			cmd += " --width %i" % int(width)
 		if height:

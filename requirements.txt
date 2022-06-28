@@ -1,4 +1,4 @@
-arrow==0.13.0
+arrow==0.15.1
 atomicwrites==1.2.1
 attrs==18.2.0
 beautifulsoup4==4.7.1
